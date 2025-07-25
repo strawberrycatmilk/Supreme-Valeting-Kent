@@ -1,0 +1,90 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: auto;
+
+}
+
+.header-navigation {
+    display: grid;
+    grid-template-columns: 100px auto;
+    margin: 20px auto 0px 10px;
+}
+
+.header-title {
+    display: grid;
+    grid-template-rows: min-content;
+    margin: 12px 0px 12px 20px;
+}
+
+.title {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    margin: 0;
+}
+
+.navigation-bar {
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-columns: 400px auto 500px;
+    width: 100%;
+    overflow: scroll;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    font-family: 'Figtree', sans-serif;
+    margin-left: 10px;
+}
+
+.image-container {
+    min-height: 400px;
+    height: 40%;
+
+    position: relative;
+    text-align: center;
+}
+
+.cover-image {
+    object-fit: cover;
+    width: 100%
+}
+
+.welcome-message {
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    margin: 0px;
+
+    min-width: 380px;
+    width: 60%;
+
+    background-color: rgb(220, 220, 220, 70%);
+}
+
+p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
+    margin: 0;
+}
+
+.lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.figtree-light {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}

@@ -26,7 +26,7 @@ body {
 .navigation-bar {
     background-color: #f7f7f7;
     display: grid;
-    grid-template-columns: 400px auto 500px;
+    grid-template-columns: 400px auto 400px;
     width: 100%;
     overflow: scroll;
 }
@@ -44,25 +44,27 @@ li {
 
 a {
     align-items: center;
+    text-decoration: none;
+
+    color: black;
 }
 
 .image-container {
     min-height: 400px;
-    height: 40%;
+    height: 50%;
 
     position: relative;
     text-align: center;
 }
 
 .cover-image {
+    height: 81svh;
+    width: 100svw;
+
     object-fit: cover;
-    width: 100%
 }
 
 .welcome-message {
-    font-family: 'Lato', sans-serif;
-    font-size: 50px;
-
     position: absolute;
     top: 40px;
     left: 16px;
@@ -71,7 +73,15 @@ a {
     min-width: 380px;
     width: 60%;
 
+    padding-bottom: 5%;
+    height: fit-content;
+
     background-color: rgb(220, 220, 220, 70%);
+}
+
+.welcome-message-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 75px;
 }
 
 p {

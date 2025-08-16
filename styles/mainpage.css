@@ -73,15 +73,15 @@ a {
     min-width: 380px;
     width: 60%;
 
-    padding-bottom: 5%;
     height: fit-content;
+    padding-bottom: 20px;
 
     background-color: rgb(220, 220, 220, 70%);
 }
 
 .welcome-message-text {
     font-family: 'Lato', sans-serif;
-    font-size: 75px;
+    font-size: calc(25px + 3.5vw);
 }
 
 p {

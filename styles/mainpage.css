@@ -61,6 +61,8 @@ a {
     height: 81svh;
     width: 100svw;
 
+    min-height: 40svw;
+
     object-fit: cover;
 }
 

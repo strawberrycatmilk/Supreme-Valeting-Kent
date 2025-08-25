@@ -8,13 +8,9 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({ origin: '/*splat' }));
+app.use(cors({ origin: '*' }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/*splat', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
 
 app.get('/api/reviews', (req, res) => {
     try {
@@ -31,6 +27,10 @@ app.get('/api/reviews', (req, res) => {
         console.error('Error reading CSV:', error);
         res.status(500).send('Error reading CSV file');
     }
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 function convertToArray(csvString) {

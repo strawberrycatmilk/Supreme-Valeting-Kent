@@ -26,7 +26,7 @@ window.onload = async () => {
             reviewHolder.append(name)
 
             const reviewText = document.createElement("p")
-            review = ""
+            let review = ""
             for (let j = 2; j < reviews[i].length; j++) {
                 review += reviews[i][j]
             }

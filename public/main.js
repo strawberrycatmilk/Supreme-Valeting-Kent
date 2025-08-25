@@ -28,9 +28,9 @@ window.onload = async () => {
             const reviewText = document.createElement("p")
             let review = ""
             for (let j = 2; j < reviews[i].length; j++) {
-                review += reviews[i][j]
+                review += "," + reviews[i][j]
             }
-            reviewText.innerText = review
+            reviewText.innerText = review.slice(1)
             reviewHolder.append(reviewText)
         }
     } catch (error) {

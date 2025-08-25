@@ -2,7 +2,7 @@
 window.onload = async () => {
     try {
         //  this calls the backend server, to get the reviews.
-        const response = await fetch('http://127.0.0.1:3000/api/reviews');
+        const response = await fetch('https://supremevaletingkent.com/api/reviews');
         const reviews = await response.json();
 
         // output all the reviews onto the console.

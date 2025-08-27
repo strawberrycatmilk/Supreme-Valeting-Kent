@@ -5,7 +5,8 @@ window.onload = async () => {
             //  this calls the backend server, to get the reviews.
             const response = await fetch('/api/reviews');
             const reviews = await response.json();
-    
+
+            console.log(reviews);
             
             for (let i = 0; i < reviews.length; i++) {
                 const reviewHolder = document.createElement("div")

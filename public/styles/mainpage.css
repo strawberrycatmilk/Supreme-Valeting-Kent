@@ -112,7 +112,6 @@ a {
     min-width: 300px;
 
     overflow-y: scroll;
-    scroll-snap-align: start;
 
     padding: 15px;
     margin: 5px;
@@ -135,4 +134,105 @@ p {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+}
+
+.services-provided {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 350px));
+    gap: 15px;
+    
+    width: 100%;
+
+    justify-content: center;
+
+    margin-top: 5vh;
+}
+
+.service {
+    min-width: 200px;
+
+    height: 30vw;
+    min-height: 300px;
+
+    padding: 15px;
+    margin: 5px;
+
+    border: gray 2px solid;
+
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 85% 15%;
+}  
+
+.price-containor {
+    width: 20vw;
+    min-width: 300px;
+
+    height: calc(25px + 3.5vw);
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    padding-bottom: 10px;
+    margin-left: 2.5vw;
+
+    border-bottom: black 1px solid;
+}
+
+.price-column { 
+    width: 33%;
+}
+
+.select-button {
+    background-color: rgba(227,208,167,255);
+    border: none;
+    
+    width: 20vw;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: calc(15px + 1vw);
+    color: white;
+    
+    padding: 10px 0 10px 0;
+}
+
+.select-button:hover {
+    cursor: pointer;
+
+    background-color: rgb(227, 208, 167, 0.5);
+}
+
+.booking-form {
+    justify-content: center;
+
+    width: 80vw;
+    margin-left: 10vw;
+
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-size: calc(15px + 1vw);
+}
+
+input, select {
+    font-family: 'Lato', sans-serif;
+
+    border: 1px solid #ccc;
+    padding: 12px 20px;
+}
+
+.communication-holder {
+    display: grid;
+    grid-template-columns: 45% auto 45%;
+    margin-top: 10px;
+}
+
+.communication {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
 }

@@ -3,7 +3,7 @@ window.onload = async () => {
     if (window.location.pathname === '/index.html') {
         try {
             //  this calls the backend server, to get the reviews.
-            const response = await fetch('http://supremevaletingkent.com/api/reviews');
+            const response = await fetch('https://supremevaletingkent.com/api/reviews');
             const reviews = await response.json();
     
             
@@ -38,28 +38,30 @@ window.onload = async () => {
     }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("quoteForm").addEventListener("submit", async function(event) {
-        event.preventDefault();
-
-        const formData = {
-            service: document.forms["quoteForm"]["service"].value,
-            make: document.forms["quoteForm"]["make"].value,
-            model: document.forms["quoteForm"]["model"].value,
-            name:  document.forms["quoteForm"]["name"].value,
-            email: document.forms["quoteForm"]["email"].value,
-            phone: document.forms["quoteForm"]["phone"].value
-        }
-        
-        if (email == "" && phone == "") {
-            return false;
-        }
-
-        const response = fetch('https://supremevaletingkent.com/api/sendemail', {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-            })
-        
+if (window.location.pathname === '/bookonline.html') {
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("quoteForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+    
+            const formData = {
+                service: document.forms["quoteForm"]["service"].value,
+                make: document.forms["quoteForm"]["make"].value,
+                model: document.forms["quoteForm"]["model"].value,
+                name:  document.forms["quoteForm"]["name"].value,
+                email: document.forms["quoteForm"]["email"].value,
+                phone: document.forms["quoteForm"]["phone"].value
+            }
+            
+            if (email == "" && phone == "") {
+                return false;
+            }
+    
+            const response = fetch('https://supremevaletingkent.com/api/sendemail', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+                })
+            
+        })
     })
-})
+}

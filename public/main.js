@@ -3,7 +3,7 @@ window.onload = async () => {
     if (window.location.pathname === '/index.html') {
         try {
             //  this calls the backend server, to get the reviews.
-            const response = await fetch('https://supremevaletingkent.com/api/reviews');
+            const response = await fetch('/api/reviews');
             const reviews = await response.json();
     
             
@@ -56,7 +56,7 @@ if (window.location.pathname === '/bookonline.html') {
                 return false;
             }
     
-            const response = fetch('https://supremevaletingkent.com/api/sendemail', {
+            const response = fetch('/api/sendemail', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)

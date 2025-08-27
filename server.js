@@ -4,7 +4,12 @@ const path = require('path');
 const cors = require('cors');
 const fs = require('fs');
 
+
+const dotenv = require('dotenv').config();
+const nodemailer = require('nodemailer');
 const app = express();
+
+app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
@@ -26,6 +31,35 @@ app.get('/api/reviews', (req, res) => {
         console.error('Error reading CSV:', error);
         res.status(500).send('Error reading CSV file');
     }
+})
+
+app.post('/api/sendemail', (req, res) => {
+    const { service, make, model, name, email, phone } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASS
+        }   
+    });
+
+    const mailOptions = {
+        from: 'hannahannerosepugh@gmail.com',
+        to: 'hannah.pugh@ymail.com',
+        subject: `Quote Request from ${name}`,
+        text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+             console.error('Error sending email:', error);
+        } else {
+             console.log('Email sent:', info.response);
+        }
+     }
+  );
+     
 })
 
 app.get('/*splat', (req, res) => {

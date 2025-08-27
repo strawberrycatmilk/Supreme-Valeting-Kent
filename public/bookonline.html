@@ -69,5 +69,44 @@
             </ul>
         </div>
     </div>
+
+    <h1 class = "welcome-message-text" style = "margin-bottom: 0; text-align: center;"> Book Online </h1>
     
+    <div class = "booking-form">
+        <form name = "quoteForm" id = "quoteForm">
+            <div style = "display: grid; grid-template-columns: 10% 90%; text-align: left; row-gap: 20px;">
+                <label for = "service">Service:</label>
+                <select name = "service" id = "service" style = "padding: 12px 30px;">
+                    <option>Bronze</option>
+                    <option>Silver</option>
+                    <option>Gold</option>
+                </select>
+    
+                <label for = "make">Make:</label> 
+                <input id = "make" name = "make" required>
+                <label for = "model">Model:</label> 
+                <input id = "model" name = "model" required>
+                <label for = "name">Name:</label> 
+                <input id = "name" name = "name" required>
+            </div>
+
+            <p class = "welcome-message-text" style = "font-size: calc(15px + 1vw); padding-top: 10px; text-align: center;">Where can I contact you? </p>
+            <section class = "communication-holder">
+                <div class = "communication">
+                    <label for = "email">Email</label> 
+                    <input id = "email" name = "email">
+                </div>
+                <div></div>
+                <div class = "communication">
+                    <label for = "number">Phone Number</label> 
+                    <input id = "number" name = "phone">
+                </div>
+            </section>
+
+            <button class = "select-button" style = "margin-left: calc(60vw / 2); margin-top: 20px;" type = "submit">
+                Get a quote
+            </button>
+
+        </form>
+    </div>
 </body>

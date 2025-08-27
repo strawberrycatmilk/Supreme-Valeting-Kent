@@ -22,7 +22,8 @@ app.get('/api/reviews', (req, res) => {
         const reviewFileAsString = fs.readFileSync('Reviews.csv', 'utf8')
     
         const reviewFileArray = convertToArray(reviewFileAsString)
-        
+
+        console.log(reviewFileArray)
         // send back the reviews
         res.json(reviewFileArray)
     }

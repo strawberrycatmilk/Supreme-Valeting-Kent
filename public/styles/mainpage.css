@@ -207,7 +207,7 @@ p {
     justify-content: center;
 
     width: 80vw;
-    margin-left: 10vw;
+    margin-left: calc(10vw - 20px);
 
     border: 1px solid #ccc;
     padding: 20px;
@@ -233,7 +233,6 @@ input, select {
 
 .communication {
     display: grid;
-    grid-template-columns: auto;
     grid-template-rows: auto auto;
 }
 

@@ -1,12 +1,11 @@
 // when the window is opened, it calls the backend. 
 window.onload = async () => {
-    if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+    if (window.location.pathname === '/index.html') {
         try {
             //  this calls the backend server, to get the reviews.
             const response = await fetch('/api/reviews');
             const reviews = await response.json();
-
-            console.log(reviews);
+    
             
             for (let i = 0; i < reviews.length; i++) {
                 const reviewHolder = document.createElement("div")
@@ -61,8 +60,11 @@ if (window.location.pathname === '/bookonline.html') {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
-                })
+            })
             
+            document.getElementById("result").style.height = 'fit-content'
+            document.getElementById("result").style.width = '80vw'
+            document.getElementById("result").style.visibility = 'visible'
         })
     })
 }

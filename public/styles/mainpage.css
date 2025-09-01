@@ -236,3 +236,22 @@ input, select {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
 }
+
+.result {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: calc(15px + 1vw);
+
+    border: 1px solid #ccc;
+    background-color: rgba(227,208,167,255);
+
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    width: 0;
+    height: 0;
+    margin-left: 10vw;
+
+    visibility: hidden;
+}

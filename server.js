@@ -22,8 +22,7 @@ app.get('/api/reviews', (req, res) => {
         const reviewFileAsString = fs.readFileSync('Reviews.csv', 'utf8')
     
         const reviewFileArray = convertToArray(reviewFileAsString)
-
-        console.log(reviewFileArray)
+        
         // send back the reviews
         res.json(reviewFileArray)
     }
@@ -46,10 +45,10 @@ app.post('/api/sendemail', (req, res) => {
     });
 
     const mailOptions = {
-        from: 'hannahannerosepugh@gmail.com',
-        to: 'hannah.pugh@ymail.com',
-        subject: `Quote Request from ${name}`,
-        text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.`
+        from: process.env.GMAIL_USER, // Sender address
+        to: 'hannah.pugh@ymail.com', // Recipient address
+        subject: `Quote Request from ${name}`, // Subject line
+        text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.` // Plain text body
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

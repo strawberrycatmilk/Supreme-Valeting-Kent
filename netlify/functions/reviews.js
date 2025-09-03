@@ -7,7 +7,7 @@ function convertToArray(csvString) {
 
 exports.handler = async function(event, context) {
   try {
-    const filePath = path.join(__dirname, '../../..', 'Reviews.csv');
+    const filePath = path.join(__dirname, '../../', 'Reviews.csv');
     const reviewFileAsString = fs.readFileSync(filePath, 'utf8');
     const reviewFileArray = convertToArray(reviewFileAsString);
 

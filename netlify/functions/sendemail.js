@@ -18,7 +18,7 @@ exports.handler = async function(event, context) {
 
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'richard.hills44@yahoo.co.uk',
+      to: 'hannah.pugh@ymail.com',
       subject: `Quote Request from ${name}`,
       text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.`,
     };

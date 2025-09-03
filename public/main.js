@@ -56,7 +56,7 @@ if (window.location.pathname === '/bookonline.html') {
                 return false;
             }
     
-            const response = fetch('/netlify/functions/sendemail.js, {
+            const response = fetch('/netlify/functions/sendemail.js', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)

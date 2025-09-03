@@ -19,7 +19,7 @@ exports.handler = async function(event, context) {
     console.error('Error reading CSV:', error);
     return {
       statusCode: 500,
-      body: 'Error reading CSV file',
+      body: JSON.stringify({ success: false, error: 'Error reading CSV file' }),
     };
   }
 };

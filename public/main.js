@@ -3,7 +3,7 @@ window.onload = async () => {
     if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
         try {
             //  this calls the backend server, to get the reviews.
-            const response = await fetch('/netlify/functions/reviews');
+            const response = await fetch('netlify/functions/reviews.js');
             const reviews = await response.json();
     
             

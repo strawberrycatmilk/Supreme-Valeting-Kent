@@ -3,7 +3,7 @@ window.onload = async () => {
     if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
         try {
             //  this calls the backend server, to get the reviews.
-            const response = await fetch('/api/reviews');
+            const response = await fetch('/netlify/functions/reviews');
             const reviews = await response.json();
     
             
@@ -56,7 +56,7 @@ if (window.location.pathname === '/bookonline.html') {
                 return false;
             }
     
-            const response = fetch('/api/sendemail', {
+            const response = fetch('/netlify/functions/sendemail.js, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)

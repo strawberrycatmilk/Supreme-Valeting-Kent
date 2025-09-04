@@ -57,18 +57,16 @@ if (window.location.pathname === '/bookonline.html') {
                 phone: document.forms["quoteForm"]["phone"].value
             }
             
-            if (email == "" && phone == "") {
-                return false;
+            if (formData.email == "" && formData.phone == "") {
+                return;
             }
-
-            console.log("Received a form")
-            const response = fetch('/.netlify/functions/sendemail', {
+    
+            const response = await fetch('/.netlify/functions/sendemail', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             })
-
-            console.log("did it work?")
+            
             document.getElementById("result").style.height = 'fit-content'
             document.getElementById("result").style.width = '80vw'
             document.getElementById("result").style.visibility = 'visible'

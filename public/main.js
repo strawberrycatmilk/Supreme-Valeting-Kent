@@ -58,6 +58,7 @@ if (window.location.pathname === '/bookonline.html') {
             }
             
             if (formData.email == "" && formData.phone == "") {
+                alert("Please provide either an email or a phone number. ")
                 return;
             }
     
@@ -67,9 +68,18 @@ if (window.location.pathname === '/bookonline.html') {
                 body: JSON.stringify(formData)
             })
             
-            document.getElementById("result").style.height = 'fit-content'
-            document.getElementById("result").style.width = '80vw'
-            document.getElementById("result").style.visibility = 'visible'
+            if (response.ok) {
+                document.getElementById("result").style.height = 'fit-content'
+                document.getElementById("result").style.width = '80vw'
+                document.getElementById("result").style.visibility = 'visible'
+            }
+            else {
+                data = await response.json()
+                return {
+                    statusCode: 500,
+                    body: error.toString()
+                }
+            }
         })
     })
 }

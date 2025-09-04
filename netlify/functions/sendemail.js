@@ -1,8 +1,7 @@
 const nodemailer = require('nodemailer');
-    
 
 exports.handler = async(event, context) => {
-    const { service, make, model, name, email, phone } = event.body;
+    const { service, make, model, name, email, phone } = JSON.parse(event.body);
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -19,18 +18,18 @@ exports.handler = async(event, context) => {
         text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.` // Plain text body
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return {
-                statusCode: 200,
-                body: error.stack
-            }
-        } else {
-             return {
-                statusCode: 200
-             }
+    try {
+        transporter.sendMail(mailOptions)
+        return {
+            statusCode: 200,
+            body: error.stack
         }
-     }
-  );
+    }
+    catch (error) {
+        return {
+            statusCode: 422,
+            body: error.toString()
+        }
+    }
      
 }

@@ -60,13 +60,15 @@ if (window.location.pathname === '/bookonline.html') {
             if (email == "" && phone == "") {
                 return false;
             }
-    
+
+            console.log("Received a form")
             const response = fetch('/.netlify/functions/sendemail', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             })
-            
+
+            console.log("did it work?")
             document.getElementById("result").style.height = 'fit-content'
             document.getElementById("result").style.width = '80vw'
             document.getElementById("result").style.visibility = 'visible'

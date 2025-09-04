@@ -1,14 +1,13 @@
+// when the window is opened, it calls the backend. 
 window.onload = async () => {
     if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
         try {
             //  this calls the backend server, to get the reviews.
             const response = await fetch('/.netlify/functions/reviews');
             const reviews = await response.json();
-
-            console.log(reviews)
     
             
-            for (let i = 0; i < reviews.length - 1; i++) {
+            for (let i = 0; i < reviews.length; i++) {
                 const reviewHolder = document.createElement("div")
                 reviewHolder.className = "review"
                 document.querySelector(".testimonials").append(reviewHolder)
@@ -32,9 +31,45 @@ window.onload = async () => {
                 }
                 reviewText.innerText = review.slice(1)
                 reviewHolder.append(reviewText)
+
+                const imageHolder = document.getElementById("gallary")
+                
+
             }
+
         } catch (error) {
             console.error('Failed to load reviews:', error);
         }
     }
 };
+
+if (window.location.pathname === '/bookonline.html') {
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("quoteForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+    
+            const formData = {
+                service: document.forms["quoteForm"]["service"].value,
+                make: document.forms["quoteForm"]["make"].value,
+                model: document.forms["quoteForm"]["model"].value,
+                name:  document.forms["quoteForm"]["name"].value,
+                email: document.forms["quoteForm"]["email"].value,
+                phone: document.forms["quoteForm"]["phone"].value
+            }
+            
+            if (email == "" && phone == "") {
+                return false;
+            }
+    
+            const response = fetch('/.netlify/functions/sendemail', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            
+            document.getElementById("result").style.height = 'fit-content'
+            document.getElementById("result").style.width = '80vw'
+            document.getElementById("result").style.visibility = 'visible'
+        })
+    })
+}

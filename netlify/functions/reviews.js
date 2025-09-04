@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fetch = require('node-fetch')
 
 function convertToArray(csvString) {
     return csvString.split(/\r?\n/).map(row => row.split(','));
@@ -25,4 +24,3 @@ exports.handler = async(event, context) => {
         };
     }
 };
-

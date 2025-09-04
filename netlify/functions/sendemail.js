@@ -20,7 +20,7 @@ exports.handler = async(event, context) => {
     };
 
     try {
-        transporter.sendMail(mailOptions)
+        const info = await transporter.sendMail(mailOptions)
         return {
             statusCode: 200,
             body: error.stack

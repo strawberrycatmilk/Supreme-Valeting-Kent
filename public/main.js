@@ -8,7 +8,7 @@ window.onload = async () => {
             console.log(reviews)
     
             
-            for (let i = 0; i < reviews.length; i++) {
+            for (let i = 0; i < reviews.length - 1; i++) {
                 const reviewHolder = document.createElement("div")
                 reviewHolder.className = "review"
                 document.querySelector(".testimonials").append(reviewHolder)

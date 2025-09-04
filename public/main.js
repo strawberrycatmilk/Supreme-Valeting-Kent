@@ -67,6 +67,9 @@ if (window.location.pathname === '/bookonline.html') {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             })
+
+            
+            console.log("data in email: ", formData)
             
             if (response.ok) {
                 document.getElementById("result").style.height = 'fit-content'

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 function convertToArray(csvString) {
     return csvString.split(/\r?\n/).map(row => row.split(','));
@@ -6,7 +7,8 @@ function convertToArray(csvString) {
 
 exports.handler = async(event, context) => {
     try {
-        const reviewFileAsString = fs.readFileSync('Reviews.csv', 'utf8')
+        const filePath = path.join(__dirname, "Reviews.csv");
+        const reviewFileAsString = fs.readFileSync(filePath, "utf8");
     
         const reviewFileArray = convertToArray(reviewFileAsString)
         

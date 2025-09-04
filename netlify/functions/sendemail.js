@@ -23,13 +23,13 @@ exports.handler = async(event, context) => {
         const info = await transporter.sendMail(mailOptions)
         return {
             statusCode: 200,
-            body: error.stack
+            body: JSON.stringify({message: "Email Sent."})
         }
     }
     catch (error) {
         return {
             statusCode: 500,
-            body: error.toString()
+            body: JSON.stringify({error: error.toString()})
         }
     }
      

@@ -23,7 +23,7 @@ exports.handler = async(event, context) => {
     catch (error) {
         console.error('Error reading CSV:', error);
         return {
-            statusCode: 422, 
+            statusCode: 500, 
             body: error.stack
         };
     }

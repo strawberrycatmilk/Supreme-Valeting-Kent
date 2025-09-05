@@ -94,7 +94,7 @@ a {
 .testimonials {
     height: calc(fit-content + 30px);
     min-height: 20svw;
-    width: calc(100svw - 30px);
+    width: calc(100svw - 10x);
 
     display: flex;
 
@@ -270,3 +270,22 @@ input, select {
     font-size: calc(15px + 0.4vw);
     font-style: normal;
 }
+
+.gallary {
+    column-count: 3;
+    column-gap: 10px;
+    
+    margin-bottom: 30px;
+}
+
+.image {
+    width: 100%;
+    overflow: hidden;
+
+    display: inline-block;
+}
+
+.image img {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }

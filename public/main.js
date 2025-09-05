@@ -1,6 +1,6 @@
 // when the window is opened, it calls the backend. 
 window.onload = async () => {
-    if (window.location.pathname === '/index' || window.location.pathname === '/') {
+    if (window.location.pathname === '/index.html' || window.location.pathname === '/index' || window.location.pathname === '/') {
         try {
             //  this calls the backend server, to get the reviews.
             const response = await fetch('/.netlify/functions/reviews');
@@ -31,10 +31,20 @@ window.onload = async () => {
                 }
                 reviewText.innerText = review.slice(1)
                 reviewHolder.append(reviewText)
+            }
 
-                const imageHolder = document.getElementById("gallary")
+            for (let imageNum = 1; imageNum < 12; imageNum++) {
+                const imageContainor = document.getElementById(`image${imageNum}`)
+
+                const image = document.createElement("img")
+                let image_path = `Site Files/Previous Work Images/Car1-${imageNum}.jpg`
+
+                image.setAttribute('src', image_path)
+                image.setAttribute('width', '100%')
+                image.setAttribute('display', 'block')
                 
 
+                imageContainor.append(image)
             }
 
         } catch (error) {
@@ -43,7 +53,28 @@ window.onload = async () => {
     }
 };
 
-if (window.location.pathname === '/bookonline') {
+if (window.location.pathname === '/index.html' || window.location.pathname === '/index' || window.location.pathname === '/') {
+    let currentCarInterval = 2
+    const rotateInterval = 2 * 60 * 1000
+    
+    setInterval(() => {
+        for (let imageNum = 1; imageNum < 12; imageNum++) {
+            const imageContainor = document.getElementById(`image${imageNum}`)
+            const image = imageContainor.querySelector("img");
+    
+            let image_path = `Site Files/Previous Work Images/Car${currentCarInterval}-${imageNum}.jpg`
+    
+            image.setAttribute('src', image_path)
+        }
+    
+        currentCarInterval++
+        if (currentCarInterval > 5) {
+            currentCarInterval = 0
+        }
+    }, rotateInterval)
+}
+
+if (window.location.pathname === '/bookonline' || window.location.pathname === '/bookonline.html') {
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("quoteForm").addEventListener("submit", async function(event) {
             event.preventDefault();

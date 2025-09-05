@@ -303,3 +303,10 @@ input, select {
 @media (max-width: 1200px) {
     .gallary { column-count: 2; }
 }
+
+@media (max-width: 800px) {
+    .navigation-bar {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+}

@@ -293,8 +293,3 @@ input, select {
 @media (max-width: 1200px) {
     .gallary { column-count: 2; }
 }
-
-@media (max-width: 768px) {
-    .gallary { column-count: 1; }
-}
-  

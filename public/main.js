@@ -37,7 +37,7 @@ window.onload = async () => {
                 const imageContainor = document.getElementById(`image${imageNum}`)
 
                 const image = document.createElement("img")
-                let image_path = `Site Files/Previous Work Images/Car1-${imageNum}.jpg`
+                let image_path = `Site Files/Previous Work Images/Car${Math.floor(Math.random() * (22 - 1)) + 1}-${imageNum}.jpg`
 
                 image.setAttribute('src', image_path)
                 image.setAttribute('width', '100%')
@@ -54,8 +54,8 @@ window.onload = async () => {
 };
 
 if (window.location.pathname === '/index.html' || window.location.pathname === '/index' || window.location.pathname === '/') {
-    let currentCarInterval = 2
-    const rotateInterval = 2 * 60 * 1000
+    let currentCarInterval = Math.floor(Math.random() * (22 - 1)) + 1
+    const rotateInterval = 30 * 1000
     
     setInterval(() => {
         for (let imageNum = 1; imageNum < 12; imageNum++) {
@@ -67,10 +67,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
             image.setAttribute('src', image_path)
         }
     
-        currentCarInterval++
-        if (currentCarInterval > 5) {
-            currentCarInterval = 0
-        }
+        currentCarInterval =  Math.floor(Math.random() * (22 - 1)) + 1
     }, rotateInterval)
 }
 

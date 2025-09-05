@@ -43,7 +43,7 @@ window.onload = async () => {
     }
 };
 
-if (window.location.pathname === '/bookonline.html') {
+if (window.location.pathname === '/bookonline') {
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("quoteForm").addEventListener("submit", async function(event) {
             event.preventDefault();

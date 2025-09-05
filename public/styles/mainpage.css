@@ -288,4 +288,13 @@ input, select {
 .image img {
     transition: opacity 1s ease-in-out;
     opacity: 1;
-  }
+}
+
+@media (max-width: 1200px) {
+    .gallary { column-count: 2; }
+}
+
+@media (max-width: 768px) {
+    .gallary { column-count: 1; }
+}
+  

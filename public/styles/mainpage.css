@@ -3,6 +3,7 @@ body {
     margin: 0;
     width: auto;
 
+    overflow-x: hidden;
 }
 
 .header-navigation {
@@ -28,6 +29,7 @@ body {
     display: grid;
     grid-template-columns: 400px auto 400px;
     width: 100%;
+
     overflow: scroll;
 }
 
@@ -79,6 +81,8 @@ a {
     padding-bottom: 20px;
 
     background-color: rgb(220, 220, 220, 70%);
+
+    border-radius: 0.5em;
 }
 
 .welcome-message-text {
@@ -115,6 +119,8 @@ a {
 
     padding: 15px;
     margin: 5px;
+
+    border-radius: 0.5em;
 }
 
 p {
@@ -285,11 +291,11 @@ input, select {
     display: inline-block;
 }
 
-@media (max-width: 1200px) {
-    .gallary { column-count: 2; }
+.image img {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
 }
 
-video {
-    width: 100%;
-    display: block;
+@media (max-width: 1200px) {
+    .gallary { column-count: 2; }
 }

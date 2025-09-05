@@ -55,7 +55,7 @@ window.onload = async () => {
 
 if (window.location.pathname === '/index.html' || window.location.pathname === '/index' || window.location.pathname === '/') {
     let currentCarInterval = Math.floor(Math.random() * (22 - 1)) + 1
-    const rotateInterval = 60 * 1000
+    const rotateInterval = 30 * 1000
     
     setInterval(() => {
         for (let imageNum = 1; imageNum < 12; imageNum++) {

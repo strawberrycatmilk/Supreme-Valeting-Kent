@@ -4,6 +4,8 @@ const nodemailer = require('nodemailer');
 exports.handler = async(event, context) => {
     const { service, make, model, name, email, phone } = JSON.parse(event.body);
 
+    console.log(event.body)
+    
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -17,10 +19,13 @@ exports.handler = async(event, context) => {
         to: 'hannah.pugh@ymail.com', // Recipient address
         subject: `Quote Request from ${name}`, // Subject line
         text: `Quote for Service: ${service}, Make: ${make}, Model: ${model}. From ${name}, contact via ${email} or ${phone}.` // Plain text body
-    };
+    };   
+    console.log("did it fail early?")
 
     try {
+        console.log("so far, everything is working.")
         const info = await transporter.sendMail(mailOptions)
+        console.log("but what about here?")
         return {
             statusCode: 200,
             body: JSON.stringify({message: "Email Sent."})

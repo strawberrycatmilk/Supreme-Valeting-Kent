@@ -57,7 +57,29 @@ if (window.location.pathname === '/bookonline.html') {
                 phone: document.forms["quoteForm"]["phone"].value
             }
 
-            console.log("Everything is working now, data is: ", formData)
+                        if (formData.email == "" && formData.phone == "") {
+                alert("Please provide either an email or a phone number. ")
+                return;
+            }
+    
+            const response = await fetch('/.netlify/functions/sendemail', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            
+            if (response.ok) {
+                document.getElementById("result").style.height = 'fit-content'
+                document.getElementById("result").style.width = '80vw'
+                document.getElementById("result").style.visibility = 'visible'
+            }
+            else {
+                data = await response.json()
+                return {
+                    statusCode: 500,
+                    body: data
+                }
+            }
         })
     })
 }

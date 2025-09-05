@@ -164,6 +164,7 @@ p {
     margin: 5px;
 
     border: gray 2px solid;
+    border-radius: 0.5em;
 
     text-align: center;
 
@@ -193,6 +194,7 @@ p {
 .select-button {
     background-color: rgba(227,208,167,255);
     border: none;
+    border-radius: 0.3em;
     
     width: 20vw;
     
@@ -216,6 +218,7 @@ p {
     margin-left: calc(10vw - 20px);
 
     border: 1px solid #ccc;
+    border-radius: 0.5em;
     padding: 20px;
 }
 
@@ -228,6 +231,7 @@ input, select {
     font-family: 'Lato', sans-serif;
 
     border: 1px solid #ccc;
+    border-radius: 0.5em;
     padding: 12px 20px;
 }
 

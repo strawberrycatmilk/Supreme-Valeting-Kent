@@ -11,8 +11,6 @@ exports.handler = async(event, context) => {
         const reviewFileAsString = fs.readFileSync(filePath, "utf8");
     
         const reviewFileArray = convertToArray(reviewFileAsString)
-
-        console.log(reviewFileArray)
         
         return {
             statusCode: 200,

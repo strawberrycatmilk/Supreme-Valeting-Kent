@@ -295,11 +295,6 @@ input, select {
     display: inline-block;
 }
 
-.image img {
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
-}
-
 @media (max-width: 1200px) {
     .gallary { column-count: 2; }
 }

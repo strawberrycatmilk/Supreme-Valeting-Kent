@@ -1,6 +1,7 @@
 [build]
     publish = "public/"
     functions = "netlify/functions/"
+    command = "npm run build && npm install node-fetch"
 
 [functions]
     included_files = ["netlify/functions/Reviews.csv"]

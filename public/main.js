@@ -8,7 +8,6 @@ function loadImages() {
         image.setAttribute('src', image_path)
         image.setAttribute('width', '100%')
         image.setAttribute('display', 'block')
-        image.setAttribute('loading', 'lazy')
         
 
         imageContainor.append(image)
@@ -18,45 +17,7 @@ function loadImages() {
 // when the window is opened, it calls the backend. 
 window.onload = async () => {
     if (window.location.pathname === '/index.html' || window.location.pathname === '/index' || window.location.pathname === '/') {
-        try {
-            //  this calls the backend server, to get the reviews.
-            const response = await fetch('/.netlify/functions/reviews');
-            loadImages()
-            const reviews = await response.json();
-            
-            const fragment = document.createDocumentFragment()
-            
-            for (let i = 0; i < reviews.length; i++) {
-                const reviewHolder = document.createElement("div")
-                reviewHolder.className = "review"
-    
-                for (let j = 0; j < reviews[i][1]; j++) {
-                    const stars = document.createElement("img")
-                    stars.setAttribute('src', 'Site Files/star-solid-full.svg')
-                    stars.setAttribute('height', '25px')
-    
-                    reviewHolder.append(stars)
-                }
-    
-                const name = document.createElement("p")
-                name.innerText = "\t- " + reviews[i][0]
-                reviewHolder.append(name)
-    
-                const reviewText = document.createElement("p")
-                let review = ""
-                for (let j = 2; j < reviews[i].length; j++) {
-                    review += "," + reviews[i][j]
-                }
-                reviewText.innerText = review.slice(1)
-                reviewHolder.append(reviewText)
-
-                fragment.append(reviewHolder)
-            }
-            document.querySelector(".testimonials").append(fragment)
-
-        } catch (error) {
-            console.error('Failed to load reviews:', error);
-        }
+        loadImages()
     }
 };
 

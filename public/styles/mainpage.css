@@ -169,7 +169,7 @@ p {
 }
 
 .service {
-    width: fit-content;
+    width: calc(fit-content - 30px);
     min-width: 200px;
 
     padding: 15px;
@@ -185,8 +185,8 @@ p {
 }  
 
 .price-containor {
-    width: 95%;
-    min-width: 200px;
+    width: 20vw;
+    min-width: 250px;
 
     height: calc(25px + 3.5vw);
 

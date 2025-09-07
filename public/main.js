@@ -32,21 +32,7 @@ window.onload = async () => {
                 reviewText.innerText = review.slice(1)
                 reviewHolder.append(reviewText)
             }
-
-            for (let imageNum = 1; imageNum < 12; imageNum++) {
-                const imageContainor = document.getElementById(`image${imageNum}`)
-
-                const image = document.createElement("img")
-                let image_path = `Site Files/Previous Work Images/Car${Math.floor(Math.random() * (22 - 1)) + 1}-${imageNum}.jpg`
-
-                image.setAttribute('src', image_path)
-                image.setAttribute('width', '100%')
-                image.setAttribute('display', 'block')
-                
-
-                imageContainor.append(image)
-            }
-
+            
         } catch (error) {
             console.error('Failed to load reviews:', error);
         }

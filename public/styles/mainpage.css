@@ -156,7 +156,7 @@ p {
 
 .services-provided {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30vw, 350px));
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 310px));
     grid-template-rows: max-content;
 
     gap: 15px;
@@ -186,7 +186,7 @@ p {
 
 .price-containor {
     width: 20vw;
-    min-width: 300px;
+    min-width: 200px;
 
     height: calc(25px + 3.5vw);
 

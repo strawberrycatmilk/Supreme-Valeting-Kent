@@ -37,7 +37,12 @@ body {
 
 .right-hand-nav-bar {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: min-content auto;
+}
+
+.right-hand-special {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 ul {
@@ -313,6 +318,16 @@ input, select {
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
     }
+
+    .right-hand-nav-bar {
+        grid-template-columns: min-content auto;
+        grid-template-rows: auto auto;
+    }
+
+    .right-hand-special {
+        display: grid;
+        grid-template-columns: min-content min-content min-content;
+    }
 }
 
 @media (max-width: 400px) {
@@ -320,5 +335,10 @@ input, select {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
+    }
+
+    .right-hand-special {
+        width: 300px;
+        grid-template-columns: min-content min-content min-content;
     }
 }

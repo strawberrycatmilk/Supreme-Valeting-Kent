@@ -234,6 +234,13 @@ p {
     padding: 20px;
 }
 
+.ServiceDetails {
+    display: grid; 
+    grid-template-columns: 20% 80%; 
+    text-align: left; 
+    row-gap: 20px;
+}
+
 label {
     font-family: 'Lato', sans-serif;
     font-size: calc(15px + 1vw);
@@ -255,7 +262,7 @@ input, select {
 
 .communication {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto min-content;
 }
 
 .result {
@@ -335,6 +342,18 @@ input, select {
 }
 
 @media (max-width: 400px) {
+    .ServiceDetails {
+        grid-template-columns: 65px auto;
+    }
+
+    .ServiceDetails select {
+        width: 96%;
+    }
+
+    .ServiceDetails input {
+        width: 76%;
+    }
+
     .right-hand-nav-bar {
         display: grid;
         grid-template-columns: auto;

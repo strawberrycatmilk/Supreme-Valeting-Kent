@@ -185,7 +185,7 @@ p {
 }  
 
 .price-containor {
-    width: 20vw;
+    width: 95%;
     min-width: 200px;
 
     height: calc(25px + 3.5vw);

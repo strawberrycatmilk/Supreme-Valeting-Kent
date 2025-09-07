@@ -17,7 +17,7 @@ body {
 .header-title {
     display: grid;
     grid-template-rows: min-content;
-    margin: auto 0px auto 4vw;
+    margin: auto 0px auto 1vw;
 }
 
 .title {

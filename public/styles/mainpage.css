@@ -145,6 +145,8 @@ p {
 .services-provided {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30vw, 350px));
+    grid-template-rows: max-content;
+
     gap: 15px;
     
     width: 100%;
@@ -155,10 +157,8 @@ p {
 }
 
 .service {
+    width: fit-content;
     min-width: 200px;
-
-    height: 30vw;
-    min-height: 300px;
 
     padding: 15px;
     margin: 5px;
@@ -292,7 +292,7 @@ input, select {
     width: 100%;
     overflow: hidden;
 
-    display: inline-block;
+    display: block;
 }
 
 @media (max-width: 1200px) {

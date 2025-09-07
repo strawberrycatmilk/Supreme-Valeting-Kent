@@ -311,6 +311,10 @@ input, select {
 
 @media (max-width: 1200px) {
     .gallary { column-count: 2; }
+
+    .services-provided {
+        gap: 40px;
+    }
 }
 
 @media (max-width: 800px) {
